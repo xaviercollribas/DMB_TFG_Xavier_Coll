@@ -1,0 +1,12 @@
+{
+    "execution_path": "",
+    "dbt_instalation_path": "",
+    "tz_dbname": "",
+    "dbuser": "",
+    "trusted_zone_secret": "",
+    "dbhost": "",
+    "ez_dbname": "",
+    "exploitation_zone_secret": "",
+    "fz_dbname": "",
+    "formatted_zone_secret": ""
+}

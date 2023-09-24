@@ -1,0 +1,11 @@
+exploitation_zone:
+  outputs:
+    prod:
+      type: postgres
+      threads: 1
+      host: "{{ env_var('ez_host')}}"
+      port: 5432
+      user: "{{ env_var('ez_user')}}"
+      pass: "{{ env_var('explotation_zone_creds')}}"
+      dbname: "{{ env_var('ez_dbname')}}"
+      schema: public
