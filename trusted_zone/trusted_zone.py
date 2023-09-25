@@ -89,7 +89,7 @@ def main():
     for name_without_timestamp, df in combined_dataframes.items():
         print(f"Combined DataFrame for Table Name: {name_without_timestamp}")
         df = remove_duplicates(df)
-        df = remove_nulls(df)
+        #df = remove_nulls(df)
         load_to_trusted_zone(engine, name_without_timestamp, df)
         print(df.head()) 
 

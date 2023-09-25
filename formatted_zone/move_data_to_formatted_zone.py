@@ -29,7 +29,7 @@ def load_file_to_postgres(storage_client, bucket_name):
        tmp_csv_path = f"/tmp/{file_name}"
        blob.download_to_filename(tmp_csv_path)
 
-       df = pd.read_csv(tmp_csv_path)
+       df = pd.read_csv(tmp_csv_path, sep=';')
        df.to_sql(table_name, engine, if_exists='replace', index=False) 
 
        print(f"{file_name} succesfully loaded to Formatted Zone")

@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import argparse
 import sys
-from io import BytesIO
+import json
 from airflow.models import Variable
 
 # ENVIRONMENT VARIABLES
@@ -47,8 +47,11 @@ def main():
     # RETRIEVE DATA FROM API IN A CSV FORMAT AND LOAD IT IN A DATAFRAME
     print(f"Fetching data from {API_ENDPOINT}")
     response = retrieve_data(API_ENDPOINT)
-    bytes_io = BytesIO(response.content)
-    df = pd.read_csv(bytes_io)
+    print("----------------------")
+    print(response.json())
+    print(response.json()['elements'])
+    df = pd.DataFrame(response.json()['elements'])
+    print(df.head)
     if response is not None:
         print("Generating CSV file")
         file_path = generate_file(FILENAME, TEMPORAL_LANDING_ZONE_PATH)
